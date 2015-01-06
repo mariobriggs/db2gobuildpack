@@ -16,6 +16,7 @@ install_db2_odbc() {
 			echo "-----> Extracting DB2 ODBC driver..."
 			tar xzf ${DB2_DIR}/clidriver.tgz -C ${DB2_DIR}
 		fi
+		ls --all $DB2_DIR
 		export DB2HOME="$DB2_DIR/clidriver"
 		export CGO_LDFLAGS=-L$DB2HOME/lib
 		export CGO_CFLAGS=-I$DB2HOME/include
