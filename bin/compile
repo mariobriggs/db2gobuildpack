@@ -197,6 +197,7 @@ then
     else
 		install_db2_odbc "${build}"
 	fi
+	install_db2_odbc "${build}"
 fi
 
 cd $p
