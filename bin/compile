@@ -1,6 +1,6 @@
 #!/bin/bash
 # usage: bin/compile <build-dir> <cache-dir> <env-dir>
-
+echo "-----> Starting buildpack installation.."
 set -eo pipefail
 
 install_db2_odbc() {
@@ -187,12 +187,12 @@ fi
 
 unset GIT_DIR # unset git dir or it will mess with goinstall
 
-#Check for db2 dependency in project
+#Check for db2 dependency in application
 if [ "$(go list -f {{.Deps}} | grep 'db2')" = "" ]
 then
 	echo "-----> DB2 dependency found, Installing dependency..."
 	if test -d $cache/clidriver; then
-#		echo "-----> Restoring DB2 ODBC driver [DB2 CLI] setup from cache"
+		echo "-----> Restoring DB2 ODBC driver [DB2 CLI] setup from cache"
 		cp -r $cache/clidriver $build/
     else
 		install_db2_odbc "${build}"
