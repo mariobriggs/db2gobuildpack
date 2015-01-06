@@ -174,8 +174,13 @@ unset GIT_DIR # unset git dir or it will mess with goinstall
 #Check for db2 dependency in project
 if [ "$(go list -f {{.Deps}} | grep 'db2')" = "" ]
 then
-	echo "DB2 dependency found, Installing dependency..."
-	install_db2_odbc "${build}/db2"
+	echo "-----> DB2 dependency found, Installing dependency..."
+	if test -d $cache_dir/clidriver; then
+		status "Restoring DB2 ODBC driver [DB2 CLI] setup from cache"
+		cp -r $cache_dir/clidriver $build_dir/
+    else
+		install_db2_odbc "${build_dir}"
+	fi
 fi
 
 cd $p
