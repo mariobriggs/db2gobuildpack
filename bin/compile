@@ -6,6 +6,7 @@ set -eo pipefail
 install_db2_odbc() {
 		DB2_DIR="$1"
 		echo "-----> Checking DB2_DIR directory.."
+		echo $DB2_DIR
 		if [ ! -d "$DB2_DIR" ]; then
 		    echo "-----> DB2_DIR directory not found, creating.."
 			mkdir -p "$DB2_DIR"
@@ -200,6 +201,7 @@ then
     else
 		install_db2_odbc "${build}/clidriver"
 	fi
+	install_db2_odbc "${build}/clidriver"
 fi
 
 cd $p
