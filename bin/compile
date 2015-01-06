@@ -198,9 +198,8 @@ then
 		echo "-----> Restoring DB2 ODBC driver [DB2 CLI] setup from cache"
 		cp -r $cache/clidriver $build/
     else
-		install_db2_odbc "${build}"
+		install_db2_odbc "${build}/clidriver"
 	fi
-	install_db2_odbc "${build}"
 fi
 
 cd $p
