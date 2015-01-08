@@ -196,12 +196,12 @@ unset GIT_DIR # unset git dir or it will mess with goinstall
 if [ "$(go list -f {{.Deps}} | grep 'db2')" = "" ]
 then
 	echo "-----> DB2 dependency found, Installing dependency..."
-	if test -d $cache/clidriver; then
-		echo "-----> Restoring DB2 ODBC driver [DB2 CLI] setup from cache"
-		cp -r $cache/clidriver $build/
-    else
+#	if test -d $cache/clidriver; then
+#		echo "-----> Restoring DB2 ODBC driver [DB2 CLI] setup from cache"
+#		cp -r $cache/clidriver $build/
+#    else
 		install_db2_odbc "${build}"
-	fi
+#	fi
 #	FLAGS=(${FLAGS[@]} bitbucket.org/phiggins/db2cli)
 #	install_db2_odbc "${build}"
 fi
