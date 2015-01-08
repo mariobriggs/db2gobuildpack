@@ -17,11 +17,11 @@ install_db2_odbc() {
 			tar xzf ${DB2_DIR}/clidriver.tgz -C ${DB2_DIR}
 		fi
 #		ls --all $DB2_DIR
-		export DB2HOME="CLI_DIR"
+#		export DB2HOME="CLI_DIR"
 		export CGO_LDFLAGS=-L$CLI_DIR/lib
 		export CGO_CFLAGS=-I$CLI_DIR/include
 #		go build .
-		export LD_LIBRARY_PATH=$CLI_DIR/lib
+#		export LD_LIBRARY_PATH=$CLI_DIR/lib
 }
 
 # Go releases for Darwin beginning with 1.2rc1
