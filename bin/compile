@@ -20,7 +20,7 @@ install_db2_odbc() {
 		export DB2HOME="CLI_DIR"
 		export CGO_LDFLAGS=-L$CLI_DIR/lib
 		export CGO_CFLAGS=-I$CLI_DIR/include
-		go build .
+#		go build .
 		export LD_LIBRARY_PATH=$CLI_DIR/lib
 }
 
