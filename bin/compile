@@ -220,4 +220,4 @@ rm -rf $build/.heroku
 
 mkdir -p $build/.profile.d
 echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
-echo "export LD_LIBRARY_PATH=\"\$HOME/clidriver/lib:\$LD_LIBRARY_PATH\"" >> $build_dir/.profile.d/go.sh
+echo "export LD_LIBRARY_PATH=\"\$HOME/clidriver/lib:\$LD_LIBRARY_PATH\"" >> $build/.profile.d/go.sh
